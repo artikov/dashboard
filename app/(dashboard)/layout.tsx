@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/header";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
 	return (
-		<div className="h-screen grid grid-rows-[56px_1fr]">
+		<div className="h-screen grid grid-rows-[56px_1fr] font-medium">
 			<header className="border-b">
 				<Header />
 			</header>
@@ -14,8 +14,8 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 					<Sidebar />
 				</aside>
 
-				<main className="overflow-auto p-6">
-					<div className="mx-auto w-full max-w-270">{children}</div>
+				<main className="overflow-auto">
+					<div className="mx-auto w-full">{children}</div>
 				</main>
 			</div>
 		</div>

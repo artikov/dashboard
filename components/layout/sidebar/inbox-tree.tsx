@@ -13,7 +13,7 @@ export function InboxTree() {
 				>
 					<span>{label}</span>
 					{typeof count === "number" && (
-						<span className="w-6.5 h-5.5 rounded-[11px] text-center p-0.75 text-xs text-black bg-secondary">
+						<span className="w-6.5 h-5.5 rounded-[11px] text-center p-0.75 text-xs text-black bg-secondary mr-6">
 							{count}
 						</span>
 					)}

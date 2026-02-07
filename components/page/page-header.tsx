@@ -1,5 +1,6 @@
+"use client";
+import { PlusIcon } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 type PageHeaderProps = {
 	title: string;
@@ -15,22 +16,30 @@ export function PageHeader({
 	actionLabel,
 }: PageHeaderProps) {
 	return (
-		<div className="mb-6 flex items-start justify-between gap-4">
-			<div>
-				<div className="flex items-center gap-2">
-					<h1 className="text-2xl font-semibold">{title}</h1>
+		<div className="py-4">
+			<div className="flex items-center justify-between gap-4">
+				<div className="flex items-center gap-3">
+					<div className="flex items-center gap-2">
+						<h1 className="text-lg font-semibold">{title}</h1>
 
-					{typeof count === "number" && (
-						<Badge variant="secondary">{count}</Badge>
+						{typeof count === "number" && (
+							<span className="text-sm text-[#b5b5b5]">({count})</span>
+						)}
+					</div>
+
+					{description && (
+						<span className="text-sm text-(--header)">{description}</span>
 					)}
 				</div>
 
-				{description && (
-					<p className="mt-1 text-sm text-muted-foreground">{description}</p>
+				{/* Right */}
+				{actionLabel && (
+					<Button className="bg-(--header) text-white hover:bg-black/90">
+						<PlusIcon className="h-5 w-5" />
+						{actionLabel}
+					</Button>
 				)}
 			</div>
-
-			{actionLabel && <Button>{actionLabel}</Button>}
 		</div>
 	);
 }

@@ -7,7 +7,7 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronsUpDown, Check } from "lucide-react";
+import { CaretUpDownIcon, CheckIcon } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 
 const workspaces = [
@@ -50,11 +50,11 @@ export function WorkspaceSwitcher() {
 						</div>
 					</div>
 
-					<ChevronsUpDown className="h-4 w-4 text-muted-foreground" />
+					<CaretUpDownIcon className="h-4 w-4 text-muted-foreground" />
 				</button>
 			</DropdownMenuTrigger>
 
-			<DropdownMenuContent align="start" side="bottom" className="w-[260px]">
+			<DropdownMenuContent align="start" side="bottom" className="w-65">
 				{workspaces.map((workspace) => {
 					const isActive = workspace.id === activeWorkspaceId;
 
@@ -83,7 +83,9 @@ export function WorkspaceSwitcher() {
 								</p>
 							</div>
 
-							{isActive && <Check className="h-4 w-4 text-muted-foreground" />}
+							{isActive && (
+								<CheckIcon className="h-4 w-4 text-muted-foreground" />
+							)}
 						</DropdownMenuItem>
 					);
 				})}

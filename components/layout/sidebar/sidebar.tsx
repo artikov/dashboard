@@ -1,7 +1,14 @@
 "use client";
 import { useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Home, MessageSquare, Share2, Users, Send, Plus } from "lucide-react";
+import {
+	HouseSimpleIcon,
+	ChatCircleIcon,
+	ShareNetworkIcon,
+	UsersIcon,
+	PaperPlaneTiltIcon,
+	PlusIcon,
+} from "@phosphor-icons/react";
 import { WorkspaceSwitcher } from "./workspace-switcher";
 import { SidebarItem } from "./sidebar-item";
 import { InboxTree } from "./inbox-tree";
@@ -18,10 +25,10 @@ export function Sidebar() {
 				<div className="flex flex-col h-full">
 					<WorkspaceSwitcher />
 
-					<SidebarItem icon={Home} label="Home" />
+					<SidebarItem icon={HouseSimpleIcon} label="Home" />
 
 					<SidebarItem
-						icon={MessageSquare}
+						icon={ChatCircleIcon}
 						label="Chats"
 						count={32}
 						active
@@ -52,12 +59,16 @@ export function Sidebar() {
 						</>
 					)}
 
-					<SidebarItem icon={Plus} label="Add new inbox" disabled />
+					<SidebarItem icon={PlusIcon} label="Add new inbox" disabled />
 
 					<div>
-						<SidebarItem icon={Share2} label="Automation" />
-						<SidebarItem icon={Users} label="Contacts" expandable />
-						<SidebarItem icon={Send} label="Campaigns" expandable />
+						<SidebarItem icon={ShareNetworkIcon} label="Automation" />
+						<SidebarItem icon={UsersIcon} label="Contacts" expandable />
+						<SidebarItem
+							icon={PaperPlaneTiltIcon}
+							label="Campaigns"
+							expandable
+						/>
 					</div>
 				</div>
 			</ScrollArea>

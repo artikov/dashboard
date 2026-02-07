@@ -2,17 +2,23 @@ import { PageHeader } from "@/components/page/page-header";
 
 export default function DashboardPage() {
 	return (
-		<>
-			<PageHeader
-				title="Lorem ipsum"
-				count={12}
-				description="Manage your conversations and inboxes here"
-				actionLabel="Create new"
-			/>
+		<div className="space-y-6">
+			<div>
+				<div className="mx-auto max-w-270 px-6">
+					<PageHeader
+						title="Lorem ipsum"
+						count={12}
+						description="Lorem ipsum dolar sit amet"
+						actionLabel="Lorem ipsum"
+					/>
+				</div>
 
-			<div className="rounded-lg border h-[400px] flex items-center justify-center">
-				Main content area
+				<div className="border-b border-[#f5f5f5]" />
 			</div>
-		</>
+
+			<div className="mx-auto max-w-270 px-6">
+				<div className="rounded-3xl bg-[#d9d9d9] h-53.25" />
+			</div>
+		</div>
 	);
 }

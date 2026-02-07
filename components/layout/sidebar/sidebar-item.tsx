@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { CaretDownIcon } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 
 type SidebarItemProps = {
@@ -29,7 +29,7 @@ export function SidebarItem({
 			className={cn(
 				"w-full flex items-center justify-between rounded-xl px-2 py-3 text-sm bg-white",
 				active ? "bg-sidebar-accent font-medium" : "hover:bg-muted",
-				disabled && "opacity-60 cursor-not-allowed bg-sidebar hover:bg-sidebar",
+				disabled && "opacity-60 bg-sidebar",
 			)}
 		>
 			<div className="flex items-center gap-3">
@@ -49,7 +49,7 @@ export function SidebarItem({
 				)}
 
 				{expandable && (
-					<ChevronDown
+					<CaretDownIcon
 						className={cn(
 							"h-4 w-4 transition-transform",
 							expanded && "rotate-180",
