@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Sidebar } from "@/components/layout/sidebar";
+import { Sidebar } from "@/components/layout/sidebar/sidebar";
 import { Header } from "@/components/layout/header";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
@@ -9,12 +9,14 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 				<Header />
 			</header>
 
-			<div className="grid grid-cols-[260px_1fr]">
+			<div className="grid grid-cols-[240px_1fr]">
 				<aside className="border-r">
 					<Sidebar />
 				</aside>
 
-				<main className="overflow-auto p-6 max-w-270">{children}</main>
+				<main className="overflow-auto p-6">
+					<div className="mx-auto w-full max-w-270">{children}</div>
+				</main>
 			</div>
 		</div>
 	);
