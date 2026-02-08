@@ -38,19 +38,19 @@ export function WorkspaceSwitcher() {
 					className="w-full rounded-xl bg-background p-3 flex items-center justify-between hover:bg-muted transition-colors mb-5"
 				>
 					<div className="flex items-center gap-3">
-						<div className="h-10 w-10 rounded-full bg-sidebar-primary flex items-center justify-center text-sm font-medium text-black">
+						<div className="h-9 w-9 rounded-full bg-sidebar-primary flex items-center justify-center text-sm font-medium text-black">
 							{activeWorkspace.initials}
 						</div>
 
 						<div className="text-left">
-							<p className="font-medium leading-none">{activeWorkspace.name}</p>
-							<p className="text-sm text-muted-foreground">
-								{activeWorkspace.plan}
+							<p className="font-semibold leading-none">
+								{activeWorkspace.name}
 							</p>
+							<p className="text-sm text-[#b5b5b5]">{activeWorkspace.plan}</p>
 						</div>
 					</div>
 
-					<CaretUpDownIcon className="h-4 w-4 text-muted-foreground" />
+					<CaretUpDownIcon className="h-5 w-5" weight="bold" />
 				</button>
 			</DropdownMenuTrigger>
 
@@ -67,7 +67,7 @@ export function WorkspaceSwitcher() {
 								className={cn(
 									"h-8 w-8 rounded-full flex items-center justify-center text-xs font-medium",
 									isActive
-										? "bg-purple-400 text-black"
+										? "bg-sidebar-primary text-black"
 										: "bg-muted text-foreground",
 								)}
 							>

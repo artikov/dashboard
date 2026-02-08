@@ -73,7 +73,7 @@
 	--header: oklch(0.18 0 0); /* #1A1A1A */
 	--sidebar: oklch(0.96 0 0); /* #F1F1F1 */
 	--sidebar-foreground: oklch(0.129 0.042 264.695);
-	--sidebar-primary: oklch(0.78 0.18 310); /* #D98DF0 */
+	--sidebar-primary: #d98df0; /* #D98DF0 */
 	--sidebar-primary-foreground: oklch(0.984 0.003 247.858);
 	--sidebar-accent: oklch(81.457% 0.0017 66.57); /* #C3C2C1 */
 	--sidebar-accent-foreground: oklch(0.208 0.042 265.755);
@@ -122,4 +122,20 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+}
+
+@font-face {
+	font-family: "Aspekta";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("/public/fonts/Aspekta-500.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Aspekta";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("/public/fonts/Aspekta-600.woff2") format("woff2");
 }

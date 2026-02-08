@@ -1,17 +1,11 @@
 import { PuzzlePieceIcon, GearIcon } from "@phosphor-icons/react";
+import { SidebarItem } from "./sidebar-item";
 
 export function SidebarFooter() {
 	return (
 		<div className="">
-			<div className="rounded-xl bg-background p-3 flex items-center gap-3">
-				<PuzzlePieceIcon className="h-5 w-5" />
-				<span>Integrations</span>
-			</div>
-
-			<div className="rounded-xl bg-background p-3 flex items-center gap-3">
-				<GearIcon className="h-5 w-5" />
-				<span>Settings</span>
-			</div>
+			<SidebarItem icon={PuzzlePieceIcon} label="Integrations" />
+			<SidebarItem icon={GearIcon} label="Settings" />
 		</div>
 	);
 }

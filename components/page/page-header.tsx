@@ -34,8 +34,8 @@ export function PageHeader({
 
 				{/* Right */}
 				{actionLabel && (
-					<Button className="bg-(--header) text-white hover:bg-black/90">
-						<PlusIcon className="h-5 w-5" />
+					<Button className="bg-(--header) text-white hover:bg-black/90 font-semibold rounded-[8px]">
+						<PlusIcon size={20} />
 						{actionLabel}
 					</Button>
 				)}

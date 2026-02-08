@@ -17,7 +17,7 @@ export default function DashboardPage() {
 			</div>
 
 			<div className="mx-auto max-w-270 px-6">
-				<div className="rounded-3xl bg-[#d9d9d9] h-53.25" />
+				<div className="rounded-[12px] bg-[#d9d9d9] h-53.25" />
 			</div>
 		</div>
 	);

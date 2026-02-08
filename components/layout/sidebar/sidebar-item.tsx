@@ -27,13 +27,13 @@ export function SidebarItem({
 			type="button"
 			onClick={expandable ? onToggle : undefined}
 			className={cn(
-				"w-full flex items-center justify-between rounded-xl px-2 py-3 text-sm bg-white",
+				"w-full flex items-center justify-between rounded-xl px-2 py-3 text-sm bg-white font-medium",
 				active ? "bg-sidebar-accent font-medium" : "hover:bg-muted",
 				disabled && "opacity-60 bg-sidebar",
 			)}
 		>
 			<div className="flex items-center gap-3">
-				{Icon ? <Icon className="h-5 w-5" /> : <span className="w-5" />}
+				{Icon ? <Icon size={19} weight="bold" /> : <span className="w-5" />}
 				<span>{label}</span>
 			</div>
 
@@ -50,10 +50,9 @@ export function SidebarItem({
 
 				{expandable && (
 					<CaretDownIcon
-						className={cn(
-							"h-4 w-4 transition-transform",
-							expanded && "rotate-180",
-						)}
+						size={19}
+						weight="bold"
+						className={cn("transition-transform", expanded && "rotate-180")}
 					/>
 				)}
 			</div>

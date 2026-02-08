@@ -72,7 +72,7 @@ export function Sidebar() {
 					</div>
 				</div>
 			</ScrollArea>
-			<div className="mt-auto pb-6.25">
+			<div className="mt-auto px-3 pb-6.25">
 				<SidebarFooter />
 			</div>
 		</div>
