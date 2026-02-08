@@ -1,18 +1,16 @@
 "use client";
 import { useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import {
-	HouseSimpleIcon,
-	ChatCircleIcon,
-	ShareNetworkIcon,
-	UsersIcon,
-	PaperPlaneTiltIcon,
-	PlusIcon,
-} from "@phosphor-icons/react";
 import { WorkspaceSwitcher } from "./workspace-switcher";
 import { SidebarItem } from "./sidebar-item";
 import { InboxTree } from "./inbox-tree";
 import { SidebarFooter } from "./sidebar-footer";
+import { HouseIcon } from "../../icons/Navigation/HouseIcon";
+import { ChatCircleIcon } from "../../icons/Communication/ChatCircleIcon";
+import { ShareAndroidIcon } from "../../icons/Communication/ShareAndroidIcon";
+import { UsersIcon } from "../../icons/User/UsersIcon";
+import { PaperPlaneIcon } from "../../icons/Communication/PaperPlaneIcon";
+import { AddPlusIcon } from "../../icons/Edit/AddPlusIcon";
 
 export function Sidebar() {
 	const [isChatsOpen, setIsChatsOpen] = useState(true);
@@ -25,7 +23,7 @@ export function Sidebar() {
 				<div className="flex flex-col h-full">
 					<WorkspaceSwitcher />
 
-					<SidebarItem icon={HouseSimpleIcon} label="Home" />
+					<SidebarItem icon={HouseIcon} label="Home" />
 
 					<SidebarItem
 						icon={ChatCircleIcon}
@@ -59,13 +57,17 @@ export function Sidebar() {
 						</>
 					)}
 
-					<SidebarItem icon={PlusIcon} label="Add new inbox" disabled />
+					<SidebarItem
+						icon={(props) => <AddPlusIcon {...props} color="#b5b5b5" />}
+						label="Add new inbox"
+						disabled
+					/>
 
 					<div>
-						<SidebarItem icon={ShareNetworkIcon} label="Automation" />
+						<SidebarItem icon={ShareAndroidIcon} label="Automation" />
 						<SidebarItem icon={UsersIcon} label="Contacts" expandable />
 						<SidebarItem
-							icon={PaperPlaneTiltIcon}
+							icon={PaperPlaneIcon}
 							label="Campaigns"
 							expandable
 						/>

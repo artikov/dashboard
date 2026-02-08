@@ -1,5 +1,5 @@
-import { CaretDownIcon } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
+import { ChevronDownIcon } from "../../icons/Arrow/ChevronDownIcon";
 
 type SidebarItemProps = {
 	icon?: React.ElementType;
@@ -33,7 +33,7 @@ export function SidebarItem({
 			)}
 		>
 			<div className="flex items-center gap-3">
-				{Icon ? <Icon size={19} weight="bold" /> : <span className="w-5" />}
+				{Icon ? <Icon size={20} /> : <span className="w-5" />}
 				<span>{label}</span>
 			</div>
 
@@ -49,9 +49,8 @@ export function SidebarItem({
 				)}
 
 				{expandable && (
-					<CaretDownIcon
-						size={19}
-						weight="bold"
+					<ChevronDownIcon
+						size={20}
 						className={cn("transition-transform", expanded && "rotate-180")}
 					/>
 				)}

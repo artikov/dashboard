@@ -1,6 +1,6 @@
 "use client";
-import { PlusIcon } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
+import { AddPlusIcon } from "../icons/Edit/AddPlusIcon";
 
 type PageHeaderProps = {
 	title: string;
@@ -35,7 +35,7 @@ export function PageHeader({
 				{/* Right */}
 				{actionLabel && (
 					<Button className="bg-(--header) text-white hover:bg-black/90 font-semibold rounded-[8px]">
-						<PlusIcon size={20} />
+						<AddPlusIcon size={20} color="#ffffff" className="size-5" />
 						{actionLabel}
 					</Button>
 				)}

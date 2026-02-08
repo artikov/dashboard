@@ -7,8 +7,9 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { CaretUpDownIcon, CheckIcon } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
+import { UnfoldMoreIcon } from "../../icons/Arrow/UnfoldMoreIcon";
+import { CheckIcon } from "@phosphor-icons/react";
 
 const workspaces = [
 	{
@@ -50,7 +51,7 @@ export function WorkspaceSwitcher() {
 						</div>
 					</div>
 
-					<CaretUpDownIcon className="h-5 w-5" weight="bold" />
+					<UnfoldMoreIcon className="h-5 w-5" />
 				</button>
 			</DropdownMenuTrigger>
 
