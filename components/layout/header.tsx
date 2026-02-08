@@ -1,29 +1,40 @@
 "use client";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { SearchIcon } from "../icons/SearchIcon";
 import { CommandIcon } from "../icons/CommandIcon";
 import { BellRingIcon } from "../icons/Communication/BellRingIcon";
 
 export function Header() {
+	const searchInputRef = useRef<HTMLInputElement>(null);
+
+	useEffect(() => {
+		const onKeyDown = (event: KeyboardEvent) => {
+			if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+				event.preventDefault();
+				searchInputRef.current?.focus();
+			}
+		};
+
+		window.addEventListener("keydown", onKeyDown);
+		return () => window.removeEventListener("keydown", onKeyDown);
+	}, []);
+
 	return (
-		<div className="h-14 px-4 flex items-center bg-(--header) text-white">
-			<div className="flex items-center gap-3 ml-30 mr-2">
+		<div className="px-4 py-2 md:py-0 md:h-14 flex flex-col md:flex-row md:items-center gap-3 md:gap-0 bg-(--header) text-white">
+			<div className="flex items-center gap-3 md:ml-30 md:mr-24">
 				<span className="w-11.25 h-5.5 rounded-[11px] bg-input p-0.75 text-center text-xs text-[#b5b5b5]">
 					beta
 				</span>
 			</div>
 
-			<div className="flex-1 flex justify-center">
-				<div className="w-full max-w-130">
-					<label className="flex items-center gap-2 rounded-[12px] bg-input px-4 py-2 text-sm text-white/70 border border-[#404040] cursor-text focus-within:border-white/40">
-						{/* <MagnifyingGlassIcon
-							className="h-4.5 w-4.5 shrink-0"
-							weight="bold"
-						/> */}
-
+			<div className="md:flex-1 md:flex md:justify-center">
+				<div className="w-full md:max-w-none md:w-135">
+					<label className="flex items-center gap-2 h-9 rounded-[12px] bg-input px-4 text-sm text-white/70 border border-[#404040] cursor-text focus-within:border-white/40">
 						<SearchIcon size={18} />
 
 						<input
+							ref={searchInputRef}
 							type="text"
 							placeholder="Search"
 							className="flex-1 bg-transparent outline-none placeholder:text-[#b5b5b5]"
@@ -40,8 +51,8 @@ export function Header() {
 					</label>
 				</div>
 			</div>
-			<div className="flex items-center gap-3 min-w-70 justify-end">
-				<Button className="rounded-[8px] bg-sidebar-primary text-black hover:bg-sidebar-primary/90 font-semibold">
+			<div className="flex items-center gap-3 md:min-w-70 md:justify-end">
+				<Button className="rounded-[8px] bg-sidebar-primary text-black hover:bg-sidebar-primary/90 font-semibold hidden sm:inline-flex w-30.75 h-8">
 					Account plans
 				</Button>
 
@@ -49,7 +60,7 @@ export function Header() {
 					<BellRingIcon size={20} />
 				</button>
 
-				<button className="text-sm text-white hover:text-white/80">
+				<button className="text-sm text-white hover:text-white/80 hidden sm:inline-flex">
 					Support
 				</button>
 

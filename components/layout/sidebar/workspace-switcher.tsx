@@ -36,7 +36,7 @@ export function WorkspaceSwitcher() {
 			<DropdownMenuTrigger asChild>
 				<button
 					type="button"
-					className="w-full rounded-xl bg-background p-3 flex items-center justify-between hover:bg-muted transition-colors mb-5"
+					className="w-full rounded-xl bg-background px-3 py-3.5 flex items-center justify-between hover:bg-muted transition-colors mb-5"
 				>
 					<div className="flex items-center gap-3">
 						<div className="h-9 w-9 rounded-full bg-sidebar-primary flex items-center justify-center text-sm font-medium text-black">

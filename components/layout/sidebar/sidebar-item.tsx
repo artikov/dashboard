@@ -27,8 +27,8 @@ export function SidebarItem({
 			type="button"
 			onClick={expandable ? onToggle : undefined}
 			className={cn(
-				"w-full flex items-center justify-between rounded-xl px-2 py-3 text-sm bg-white font-medium",
-				active ? "bg-sidebar-accent font-medium" : "hover:bg-muted",
+				"w-full h-[42px] flex items-center justify-between rounded-xl px-2 text-sm bg-white font-medium",
+				active ? "bg-sidebar-accent" : "hover:bg-muted",
 				disabled && "opacity-60 bg-sidebar",
 			)}
 		>
@@ -37,7 +37,7 @@ export function SidebarItem({
 				<span>{label}</span>
 			</div>
 
-			<div className="flex items-center gap-2">
+			<div className="flex items-center gap-1">
 				{typeof count === "number" && (
 					<span
 						className={cn(
